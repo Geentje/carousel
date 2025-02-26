@@ -14,18 +14,17 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <!-- Bootstrap 3 JS -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
   <style type="text/css">
     /* Import Nunito Font */
     @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap');
 
     #trending-carousel-unique {
-      font-family: 'Nunito', sans-serif;
+      font-family: 'Nunito', sans-serif; /* Gebruik Nunito */
       transform: scale(0.9) !important;
-      transform-origin: top center !important; /* Belangrijk! */
-      width: fit-content; /* Inhoud aanpassen */
-      margin: 0 auto;     /* Centreer horizontaal */
-}
+      transform-origin: top center !important;
+      width: fit-content;
+      margin: 0 auto;
+    }
     #trending-carousel-unique h2 {
       color: #000;
       font-size: 26px;
@@ -79,7 +78,7 @@
     #trending-carousel-unique .carousel .thumb-wrapper { text-align: center; }
     #trending-carousel-unique .carousel .thumb-content { padding: 15px; }
     #trending-carousel-unique .carousel .carousel-control {
-      height: 100px; width: 40px; background: rgba(0, 0, 0, 0.2);
+      height: 100px; width: 40px; background: rgba(0, 0, 0, 0.1);
       margin: auto 0; text-shadow: none;
     }
     #trending-carousel-unique .carousel .carousel-control i {
@@ -88,18 +87,20 @@
       color: rgba(0, 0, 0, 0.8);
       font-weight: bold;
     }
-    #trending-carousel-unique .carousel .item-price { font-size: 13px; padding: 2px 0; }
-    #trending-carousel-unique .carousel .item-price strike { color: #999; margin-right: 5px; }
-    #trending-carousel-unique .carousel .item-price span { color: #86bd57; font-size: 110%; }
     #trending-carousel-unique .carousel .carousel-control.left i { margin-left: -3px; }
     #trending-carousel-unique .carousel .carousel-control.right i { margin-right: -3px; }
     #trending-carousel-unique .carousel .carousel-indicators { bottom: -50px; }
     #trending-carousel-unique .carousel-indicators li,
     #trending-carousel-unique .carousel-indicators li.active {
-      width: 10px; height: 10px; margin: 4px; border-radius: 50%; border-color: transparent;
+      width: 10px; height: 10px; margin: 4px; border-radius: 100%; border-color: transparent;
     }
     #trending-carousel-unique .carousel-indicators li { background: rgba(0, 0, 0, 0.2); }
     #trending-carousel-unique .carousel-indicators li.active { background: rgba(0, 0, 0, 0.6); }
+    
+    #trending-carousel-unique .carousel-control.left,
+    #trending-carousel-unique .carousel-control.right {
+    bottom: 40% !important; /* Pas deze waarde aan (bijvoorbeeld 40%, 45%, 50%) */
+}
 
     /*  Aanpassingen voor horizontale sterren */
     #trending-carousel-unique .star-rating ul {
@@ -132,6 +133,7 @@
     #trending-carousel-unique .star-rating {
       margin-top: auto;          /* Duw de sterren naar de onderkant */
     }
+
   </style>
 </head>
 <body>
