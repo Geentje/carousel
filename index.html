@@ -4,14 +4,24 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google Fonts -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap 3 CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- jQuery 1.12.4 (of hoger) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Bootstrap 3 JS -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
   <style type="text/css">
     /* Alle CSS wordt ingekapseld binnen de unieke container #trending-carousel-unique */
-    #trending-carousel-unique { font-family: "Open Sans", sans-serif; }
+    #trending-carousel-unique {
+      font-family: "Open Sans", sans-serif;
+      transform: scale(0.6);        /* Pas deze waarde aan */
+      transform-origin: top left;  /* Belangrijk! */
+    }
     #trending-carousel-unique h2 {
       color: #000;
       font-size: 26px;
@@ -35,83 +45,74 @@
     }
     #trending-carousel-unique .carousel { margin: 50px auto; padding: 0 70px; }
     #trending-carousel-unique .carousel .item { min-height: 330px; text-align: center; overflow: hidden; }
-    #trending-carousel-unique .carousel .item .img-box { height: 160px; width: 100%; position: relative; }
+    #trending-carousel-unique .carousel .item .img-box {
+      height: 160px; width: 100%; position: relative;
+    }
     #trending-carousel-unique .carousel .item img {
-      max-width: 100%;
-      max-height: 100%;
+      max-width: 100%; max-height: 100%;
       display: inline-block;
       position: absolute;
-      bottom: 0;
+      bottom: 0; left: 0; right: 0;
       margin: 0 auto;
-      left: 0;
-      right: 0;
     }
-    #trending-carousel-unique .carousel .item h4 { font-size: 18px; margin: 10px 0; }
-    /* De knoppen blijven aanwezig in de CSS, maar worden in deze variant niet gebruikt */
+    #trending-carousel-unique .carousel .item h4 {
+      font-size: 18px; margin: 10px 0;
+    }
+    /* De knoppen (btn) staan wel in de CSS, maar worden niet gebruikt in de HTML */
     #trending-carousel-unique .carousel .item .btn {
-      color: #333;
-      border-radius: 0;
-      font-size: 11px;
-      text-transform: uppercase;
-      font-weight: bold;
-      background: none;
-      border: 1px solid #ccc;
-      padding: 5px 10px;
-      margin-top: 5px;
-      line-height: 16px;
+      color: #333; border-radius: 0; font-size: 11px;
+      text-transform: uppercase; font-weight: bold;
+      background: none; border: 1px solid #ccc;
+      padding: 5px 10px; margin-top: 5px; line-height: 16px;
     }
     #trending-carousel-unique .carousel .item .btn:hover,
     #trending-carousel-unique .carousel .item .btn:focus {
-      color: #fff;
-      background: #000;
-      border-color: #000;
-      box-shadow: none;
+      color: #fff; background: #000; border-color: #000; box-shadow: none;
     }
     #trending-carousel-unique .carousel .item .btn i {
-      font-size: 14px;
-      font-weight: bold;
-      margin-left: 5px;
+      font-size: 14px; font-weight: bold; margin-left: 5px;
     }
     #trending-carousel-unique .carousel .thumb-wrapper { text-align: center; }
     #trending-carousel-unique .carousel .thumb-content { padding: 15px; }
     #trending-carousel-unique .carousel .carousel-control {
-      height: 100px;
-      width: 40px;
-      background: none;
-      margin: auto 0;
-      background: rgba(0, 0, 0, 0.2);
+      height: 100px; width: 40px; background: rgba(0, 0, 0, 0.2);
+      margin: auto 0; text-shadow: none;
     }
     #trending-carousel-unique .carousel .carousel-control i {
-      font-size: 30px;
-      position: absolute;
-      top: 50%;
-      display: inline-block;
-      margin: -16px 0 0 0;
-      z-index: 5;
-      left: 0;
-      right: 0;
+      font-size: 30px; position: absolute; top: 50%;
+      display: inline-block; margin-top: -16px; left: 0; right: 0;
       color: rgba(0, 0, 0, 0.8);
-      text-shadow: none;
       font-weight: bold;
     }
     #trending-carousel-unique .carousel .item-price { font-size: 13px; padding: 2px 0; }
     #trending-carousel-unique .carousel .item-price strike { color: #999; margin-right: 5px; }
     #trending-carousel-unique .carousel .item-price span { color: #86bd57; font-size: 110%; }
     #trending-carousel-unique .carousel .carousel-control.left i { margin-left: -3px; }
-    #trending-carousel-unique .carousel .carousel-control.left i { margin-right: -3px; }
+    #trending-carousel-unique .carousel .carousel-control.right i { margin-right: -3px; }
     #trending-carousel-unique .carousel .carousel-indicators { bottom: -50px; }
     #trending-carousel-unique .carousel-indicators li,
-    #trending-carousel-indicators li.active {
-      width: 10px;
-      height: 10px;
-      margin: 4px;
-      border-radius: 50%;
-      border-color: transparent;
+    #trending-carousel-unique .carousel-indicators li.active {
+      width: 10px; height: 10px; margin: 4px; border-radius: 50%; border-color: transparent;
     }
     #trending-carousel-unique .carousel-indicators li { background: rgba(0, 0, 0, 0.2); }
     #trending-carousel-unique .carousel-indicators li.active { background: rgba(0, 0, 0, 0.6); }
-    #trending-carousel-unique .star-rating li { padding: 0; }
-    #trending-carousel-unique .star-rating i { font-size: 14px; color: #ffc000; }
+
+    /*  Aanpassingen voor horizontale sterren */
+    #trending-carousel-unique .star-rating ul {
+      list-style: none; /* Verwijder opsommingstekens */
+      padding: 0;       /* Verwijder default padding */
+      margin: 0;        /* Verwijder default margin */
+    }
+
+    #trending-carousel-unique .star-rating li {
+      display: inline-block; /* Forceer horizontale weergave */
+      padding: 0;
+    }
+
+    #trending-carousel-unique .star-rating i {
+      font-size: 14px;
+      color: #ffc000;
+    }
   </style>
 </head>
 <body>
