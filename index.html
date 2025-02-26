@@ -112,6 +112,21 @@
       font-size: 14px;
       color: #ffc000;
     }
+
+    /*  Aanpassingen voor gelijke hoogte en sterren onderaan */
+    #trending-carousel-unique .thumb-wrapper {
+      display: flex;              /* Gebruik flexbox */
+      flex-direction: column;     /* Stapel de items verticaal */
+      height: 350px;             /* Forceer een vaste hoogte (pas dit aan!) */
+    }
+
+    #trending-carousel-unique .thumb-content {
+        flex-grow: 1;            /* Laat de productnaam ruimte innemen */
+    }
+
+    #trending-carousel-unique .star-rating {
+      margin-top: auto;          /* Duw de sterren naar de onderkant */
+    }
   </style>
 </head>
 <body>
@@ -420,3 +435,4 @@
   </div>
 </body>
 </html>
+"
