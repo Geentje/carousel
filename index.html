@@ -1,0 +1,419 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style type="text/css">
+    /* Alle CSS wordt ingekapseld binnen de unieke container #trending-carousel-unique */
+    #trending-carousel-unique { font-family: "Open Sans", sans-serif; }
+    #trending-carousel-unique h2 {
+      color: #000;
+      font-size: 26px;
+      font-weight: 300;
+      text-align: center;
+      text-transform: uppercase;
+      position: relative;
+      margin: 30px 0 80px;
+    }
+    #trending-carousel-unique h2 b { color: #00ADEF; }
+    #trending-carousel-unique h2::after {
+      content: "";
+      width: 100px;
+      position: absolute;
+      margin: 0 auto;
+      height: 4px;
+      background: rgba(0, 0, 0, 0.2);
+      left: 0;
+      right: 0;
+      bottom: -20px;
+    }
+    #trending-carousel-unique .carousel { margin: 50px auto; padding: 0 70px; }
+    #trending-carousel-unique .carousel .item { min-height: 330px; text-align: center; overflow: hidden; }
+    #trending-carousel-unique .carousel .item .img-box { height: 160px; width: 100%; position: relative; }
+    #trending-carousel-unique .carousel .item img {
+      max-width: 100%;
+      max-height: 100%;
+      display: inline-block;
+      position: absolute;
+      bottom: 0;
+      margin: 0 auto;
+      left: 0;
+      right: 0;
+    }
+    #trending-carousel-unique .carousel .item h4 { font-size: 18px; margin: 10px 0; }
+    /* De knoppen blijven aanwezig in de CSS, maar worden in deze variant niet gebruikt */
+    #trending-carousel-unique .carousel .item .btn {
+      color: #333;
+      border-radius: 0;
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: bold;
+      background: none;
+      border: 1px solid #ccc;
+      padding: 5px 10px;
+      margin-top: 5px;
+      line-height: 16px;
+    }
+    #trending-carousel-unique .carousel .item .btn:hover,
+    #trending-carousel-unique .carousel .item .btn:focus {
+      color: #fff;
+      background: #000;
+      border-color: #000;
+      box-shadow: none;
+    }
+    #trending-carousel-unique .carousel .item .btn i {
+      font-size: 14px;
+      font-weight: bold;
+      margin-left: 5px;
+    }
+    #trending-carousel-unique .carousel .thumb-wrapper { text-align: center; }
+    #trending-carousel-unique .carousel .thumb-content { padding: 15px; }
+    #trending-carousel-unique .carousel .carousel-control {
+      height: 100px;
+      width: 40px;
+      background: none;
+      margin: auto 0;
+      background: rgba(0, 0, 0, 0.2);
+    }
+    #trending-carousel-unique .carousel .carousel-control i {
+      font-size: 30px;
+      position: absolute;
+      top: 50%;
+      display: inline-block;
+      margin: -16px 0 0 0;
+      z-index: 5;
+      left: 0;
+      right: 0;
+      color: rgba(0, 0, 0, 0.8);
+      text-shadow: none;
+      font-weight: bold;
+    }
+    #trending-carousel-unique .carousel .item-price { font-size: 13px; padding: 2px 0; }
+    #trending-carousel-unique .carousel .item-price strike { color: #999; margin-right: 5px; }
+    #trending-carousel-unique .carousel .item-price span { color: #86bd57; font-size: 110%; }
+    #trending-carousel-unique .carousel .carousel-control.left i { margin-left: -3px; }
+    #trending-carousel-unique .carousel .carousel-control.left i { margin-right: -3px; }
+    #trending-carousel-unique .carousel .carousel-indicators { bottom: -50px; }
+    #trending-carousel-unique .carousel-indicators li,
+    #trending-carousel-unique .carousel-indicators li.active {
+      width: 10px;
+      height: 10px;
+      margin: 4px;
+      border-radius: 50%;
+      border-color: transparent;
+    }
+    #trending-carousel-unique .carousel-indicators li { background: rgba(0, 0, 0, 0.2); }
+    #trending-carousel-unique .carousel-indicators li.active { background: rgba(0, 0, 0, 0.6); }
+    #trending-carousel-unique .star-rating li { padding: 0; }
+    #trending-carousel-unique .star-rating i { font-size: 14px; color: #ffc000; }
+  </style>
+</head>
+<body>
+  <div id="trending-carousel-unique">
+    <div class="container" style="position:relative;top:7em;">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Trending <b>Products</b></h2>
+          <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+            <!-- Carousel indicators -->
+            <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <!-- Wrapper for carousel items -->
+            <div class="carousel-inner">
+              <div class="item carousel-item active">
+                <div class="row">
+                  <!-- Product 1 -->
+                  <div class="col-sm-3">
+                    <div class="thumb-wrapper">
+                      <div class="img-box">
+                        <a href="https://oitbv.nl/producten/desinfectie-hygiene/hand-desinfectie/-60322-schulke-desderman-pure-alcohol-500ml/" target="_blank">
+                          <img src="https://oitbv.nl/site/media/upload/images/60322_100008345b_image-xxl_20230418194756.jpg" class="img-responsive img-fluid" alt="Schulke Desderman Care Alcohol">
+                        </a>
+                      </div>
+                      <div class="thumb-content">
+                        <h4>Schulke Desderman Care Alcohol</h4>
+                        <div class="star-rating">
+                          <ul class="list-inline">
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Product 2 -->
+                  <div class="col-sm-3">
+                    <div class="thumb-wrapper">
+                      <div class="img-box">
+                        <a href="https://oitbv.nl/producten/whitening-producten/thuisbleken/-55970-ultradent-opalescence-go-6-mint/" target="_blank">
+                          <img src="https://oitbv.nl/site/media/upload/images/55970_100000098b_image-xxl_20230418161010.jpg" class="img-responsive img-fluid" alt="Ultradent OpalEscence Go 6% mint">
+                        </a>
+                      </div>
+                      <div class="thumb-content">
+                        <h4>Ultradent OpalEscence Go 6% mint</h4>
+                        <div class="star-rating">
+                          <ul class="list-inline">
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Product 3 -->
+                  <div class="col-sm-3">
+                    <div class="thumb-wrapper">
+                      <div class="img-box">
+                        <a href="https://oitbv.nl/producten/tangen-instrumenten/naaldvoerders/-56391-mathieu-naaldvoerder-standaard/" target="_blank">
+                          <img src="https://oitbv.nl/site/media/upload/images/56391_100000820b_image-xxl_20230424154719.jpg" class="img-responsive img-fluid" alt="Mathieu Naaldvoerder IX862">
+                        </a>
+                      </div>
+                      <div class="thumb-content">
+                        <h4>Mathieu Naaldvoerder IX862</h4>
+                        <div class="star-rating">
+                          <ul class="list-inline">
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Product 4 -->
+                  <div class="col-sm-3">
+                    <div class="thumb-wrapper">
+                      <div class="img-box">
+                        <a href="https://oitbv.nl/producten/elastomerics/intraoraal/-56769-ao-kl-elastiek-gorilla-3-16-4-5oz/" target="_blank">
+                          <img src="https://oitbv.nl/site/media/upload/images/56769_100001567b_image-xxl_20230418164752.jpg" class="img-responsive img-fluid" alt="Wildlife Intraoraal Elastiek">
+                        </a>
+                      </div>
+                      <div class="thumb-content">
+                        <h4>Wildlife Intraoraal Elastiek</h4>
+                        <div class="star-rating">
+                          <ul class="list-inline">
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item carousel-item">
+                <div class="row">
+                  <!-- Product 5 -->
+                  <div class="col-sm-3">
+                    <div class="thumb-wrapper">
+                      <div class="img-box">
+                        <a href="https://oitbv.nl/producten/bogen-draden/straight-lenghts-spooled-draden/-56726-14-straight-length-wires-016-steel/" target="_blank">
+                          <img src="https://oitbv.nl/site/media/upload/images/56726_100001475b_image-xxl_20230418164455.jpg" class="img-responsive img-fluid" alt="Stainless Steel Straight Length Wires">
+                        </a>
+                      </div>
+                      <div class="thumb-content">
+                        <h4>Stainless Steel Straight Length Wires</h4>
+                        <div class="star-rating">
+                          <ul class="list-inline">
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Product 6 -->
+                  <div class="col-sm-3">
+                    <div class="thumb-wrapper">
+                      <div class="img-box">
+                        <a href="https://oitbv.nl/producten/brackets/conventionele-brackets-esthetisch/-58222-symetri-clear-ceramic-11-022/" target="_blank">
+                          <img src="https://oitbv.nl/site/media/upload/images/58222_100004926b_image-xxl_20230418175816.jpg" class="img-responsive img-fluid" alt="Ormco Symetri Clear MBT .022">
+                        </a>
+                      </div>
+                      <div class="thumb-content">
+                        <h4>Ormco Symetri Clear MBT .022</h4>
+                        <div class="star-rating">
+                          <ul class="list-inline">
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Product 7 -->
+                  <div class="col-sm-3">
+                    <div class="thumb-wrapper">
+                      <div class="img-box">
+                        <a href="https://oitbv.nl/producten/adhesieven/bonding-cement-ets-accessoires/-56904-fhs-micro-applicators-regular-18-901t/" target="_blank">
+                          <img src="https://oitbv.nl/site/media/upload/images/56904_100001798b_image-xxl_20230605141223.jpg" class="img-responsive img-fluid" alt="Micro Applicators Regular">
+                        </a>
+                      </div>
+                      <div class="thumb-content">
+                        <h4>Micro Applicators Regular</h4>
+                        <div class="star-rating">
+                          <ul class="list-inline">
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Product 8 -->
+                  <div class="col-sm-3">
+                    <div class="thumb-wrapper">
+                      <div class="img-box">
+                        <a href="https://oitbv.nl/producten/patientcare-preventie/patient-hygiene-preventie/-56579-tandenborstel-wegwerp-met-tandpasta/" target="_blank">
+                          <img src="https://oitbv.nl/site/media/upload/images/56579_100001202b_image-xxl_20230915120006.jpg" class="img-responsive img-fluid" alt="Cavex Rush Brush Tandenborstels">
+                        </a>
+                      </div>
+                      <div class="thumb-content">
+                        <h4>Cavex Rush Brush Tandenborstels</h4>
+                        <div class="star-rating">
+                          <ul class="list-inline">
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item carousel-item">
+                <div class="row">
+                  <!-- Product 9 -->
+                  <div class="col-sm-3">
+                    <div class="thumb-wrapper">
+                      <div class="img-box">
+                        <a href="https://oitbv.nl/producten/afdrukken/alginaat/-57506-alginaat-cavex-color-change-fast-x1/" target="_blank">
+                          <img src="https://oitbv.nl/site/media/upload/images/57506_100003479b_image-xxl_20230418172537.jpg" class="img-responsive img-fluid" alt="Alginaat Cavex ColorChange Fast Set">
+                        </a>
+                      </div>
+                      <div class="thumb-content">
+                        <h4>Alginaat Cavex ColorChange Fast Set</h4>
+                        <div class="star-rating">
+                          <ul class="list-inline">
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Product 10 -->
+                  <div class="col-sm-3">
+                    <div class="thumb-wrapper">
+                      <div class="img-box">
+                        <a href="https://oitbv.nl/producten/roterende-instrumenten-ipr/interproximaal-strippen/-56299-sunset-strip-single-sided-super-fine/" target="_blank">
+                          <img src="https://oitbv.nl/site/media/upload/images/56299_100000675b_image-xxl_20230418162659.jpg" class="img-responsive img-fluid" alt="Interpoximal Stripping Enkelzijdig">
+                        </a>
+                      </div>
+                      <div class="thumb-content">
+                        <h4>Interpoximal Stripping Enkelzijdig</h4>
+                        <div class="star-rating">
+                          <ul class="list-inline">
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Product 11 -->
+                  <div class="col-sm-3">
+                    <div class="thumb-wrapper">
+                      <div class="img-box">
+                        <a href="https://oitbv.nl/producten/disposables/servetten/-56465-servetten-geplastificeerd-blauw-akzenta/" target="_blank">
+                          <img src="https://oitbv.nl/site/media/upload/images/56465_100000963b_image-xxl_20230418163009.jpg" class="img-responsive img-fluid" alt="Akzenta Patientservetten">
+                        </a>
+                      </div>
+                      <div class="thumb-content">
+                        <h4>Akzenta Patientservetten</h4>
+                        <div class="star-rating">
+                          <ul class="list-inline">
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Product 12 -->
+                  <div class="col-sm-3">
+                    <div class="thumb-wrapper">
+                      <div class="img-box">
+                        <a href="https://oitbv.nl/producten/aligners-retainers/metalen-lingual-retainers/-60640-ortho-flextech-30-gold-chain/" target="_blank">
+                          <img src="https://oitbv.nl/site/media/upload/images/60640_100008936b_image-xxl_20230424155239.jpg" class="img-responsive img-fluid" alt="Ortho-Flextech 30 Gold Chain">
+                        </a>
+                      </div>
+                      <div class="thumb-content">
+                        <h4>Ortho-Flextech 30" Gold Chain</h4>
+                        <div class="star-rating">
+                          <ul class="list-inline">
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Carousel controls -->
+            <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
+              <i class="fa fa-angle-left"></i>
+            </a>
+            <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
+              <i class="fa fa-angle-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
