@@ -16,11 +16,16 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   <style type="text/css">
+    /* Import Nunito Font */
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap');
+
     #trending-carousel-unique {
-      font-family: "Open Sans", sans-serif;
+      font-family: 'Nunito', sans-serif;
       transform: scale(0.9) !important;
-      transform-origin: top left;
-    }
+      transform-origin: top center !important; /* Belangrijk! */
+      width: fit-content; /* Inhoud aanpassen */
+      margin: 0 auto;     /* Centreer horizontaal */
+}
     #trending-carousel-unique h2 {
       color: #000;
       font-size: 26px;
@@ -435,4 +440,3 @@
   </div>
 </body>
 </html>
-"
